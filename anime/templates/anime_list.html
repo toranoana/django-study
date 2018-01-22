@@ -1,21 +1,29 @@
 <html>
 
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
 <p>アニメ一覧</p>
 
 {% if anime_list %}
-  <table>
-    <tr>
-      <th>タイトル</th>
-      <th>年度</th>
-      <th>放送月</th>
-    </tr>
-    {% for anime in anime_list %}
+  <table class="table">
+    <thead>
       <tr>
-        <td>{{anime.title}}</td>
-        <td>{{anime.year}}</td>
-        <td>{{anime.season}}</td>
+        <th>タイトル</th>
+        <th>年度</th>
+        <th>放送月</th>
       </tr>
-    {% endfor %}
+    </thead>
+    <tbody>
+      {% for anime in anime_list %}
+        <tr>
+          <td>{{anime.title}}</td>
+          <td>{{anime.year}}</td>
+          <td>{{anime.season}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
   </table>
 {% else %}
     <p>アニメが登録されていません。</p>
