@@ -1,0 +1,35 @@
+<html>
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<p>タイトル: {{anime.title}}</p>
+<p>放送開始年: {{anime.year}}</p>
+<p>放送開始月: {{anime.season}}</p>
+
+{% if cv_list %}
+  <p>出演声優一覧</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>CV</th>
+        <th>生年月日</th>
+        <th>所属事務所</th>
+        <th>公式URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cv in cv_list %}
+        <tr>
+          <td>{{cv.name}}</td>
+          <td>{{cv.birthday}}</td>
+          <td>{{cv.agency}}</td>
+          <td>{{cv.official_url}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
+</html>

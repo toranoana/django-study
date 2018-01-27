@@ -18,7 +18,7 @@
     <tbody>
       {% for anime in anime_list %}
         <tr>
-          <td>{{anime.title}}</td>
+          <td><a href='/anime/{{anime.id}}/'>{{anime.title}}</a></td>
           <td>{{anime.year}}</td>
           <td>{{anime.season}}</td>
         </tr>
